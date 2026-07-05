@@ -1,0 +1,59 @@
+$file-bg: #ffffff;
+$file-border: #d3d3d3;
+$file-corner: #e6e6e6;
+$text-color: #3a3a3a;
+
+.file {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 84px;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 8px;
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &__icon {
+    position: relative;
+    width: 48px;
+    height: 52px;
+    background: $file-bg;
+    border: 1px solid $file-border;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  &__corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12px 12px 0;
+    border-color: transparent $file-corner transparent transparent;
+  }
+
+  &__name {
+    font-size: 12.5px;
+    line-height: 1.3;
+    color: $text-color;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
